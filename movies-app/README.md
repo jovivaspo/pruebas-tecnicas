@@ -20,6 +20,6 @@ Primera iteración:
 
 ✅ Ordenar búsqueda.  -> useMemo, array.sort y string.localeCompare
 
-✅ Haz que la búsqueda se haga automáticamente al escribir.
+✅ Haz que la búsqueda se haga automáticamente al escribir. useCallback
 
-✅ Evita que se haga la búsqueda continuamente al escribir (debounce)
+✅ Evita que se haga la búsqueda continuamente al escribir (debounce) useCallback + debounce (just-debounce-it)

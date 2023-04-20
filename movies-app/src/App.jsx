@@ -1,12 +1,10 @@
 import { Movie } from "./components/Movie"
-import { useFormMovies } from "../hooks/useFormMovies"
+import { useFormMovies } from "./hooks/useFormMovies"
 import { Form } from "./components/Form"
 
 function App() {
 
 	const {movies, search, error, loading, sort, handlerChange, handlerSubmit, handlerCheck} = useFormMovies()
-
-	console.log(movies)
 
 	return (
 		<div className="App">

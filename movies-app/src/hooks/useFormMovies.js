@@ -1,5 +1,6 @@
-import { useMemo, useRef, useState } from "react"
-import { getMovies } from "../src/services/getMovies"
+import { useMemo, useRef, useState, useCallback  } from "react"
+import { getMovies } from "../services/getMovies"
+import debound from "just-debounce-it"
 
 export const useFormMovies = () => {
 	const [search, setSearch] = useState("")
@@ -10,17 +11,28 @@ export const useFormMovies = () => {
 
 	const searchRef = useRef(search)
 
+	const debounceGetMovies = useCallback(
+		debound((search)=>{
+			console.log(search)
+			getMoviesCallback(search)
+		},700)
+		,[])
+
 	const handlerCheck = () =>{
 		setSort(!sort)
 	}
 
 	const handlerChange = (e) => {
 		setSearch(e.target.value)
+		debounceGetMovies(e.target.value)
 	}
 
 	const handlerSubmit = (e) => {
 		e.preventDefault()
+		getMoviesCallback(search)
+	   }
 
+	   const getMoviesCallback = useCallback((search)=>{
 		if(!search){
 			setError("Es necesario indicar una película")
 			return
@@ -44,11 +56,9 @@ export const useFormMovies = () => {
 				setError(error.message))
 
 	   setLoading(false)
-
-	   }
+	   }, [])
 
 	   const sortMovies = useMemo(()=>{
-		console.log("ordenando")
 		const sortedMovies = !sort? movies : movies.sort((a,b)=>a.Title.localeCompare(b.Title))
 		return sortedMovies
 	   },[movies, sort])
