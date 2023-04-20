@@ -13,12 +13,8 @@ function App() {
 			<header>
 				<h1>Aplicación de películas</h1>
 				<Form search={search} handlerChange={handlerChange} handlerSubmit={handlerSubmit} />
-			
-				
 				<label htmlFor="sort">Ordenar</label>
 				<input type="checkbox" id="sort" checked={sort} onChange={handlerCheck}/>
-					
-				
 				{error && <p>{error}</p>}
 				{loading && <p>Cargando...</p>}
 			</header>

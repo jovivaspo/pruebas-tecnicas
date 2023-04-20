@@ -8,7 +8,7 @@ Requerimientos:
 
 ✅ Lista las películas y muestra el título, año y poster.
 
-✅ Que el formulario funcione
+✅ Que el formulario funcione 
 
 ✅ Haz que las películas se muestren en un grid responsive.
 
@@ -16,7 +16,9 @@ Requerimientos:
 
 Primera iteración:
 
-✅ Evitar que se haga la misma búsqueda dos veces seguidas.
+✅ Evitar que se haga la misma búsqueda dos veces seguidas. -> useRef
+
+✅ Ordenar búsqueda.  -> useMemo, array.sort y string.localeCompare
 
 ✅ Haz que la búsqueda se haga automáticamente al escribir.
 
