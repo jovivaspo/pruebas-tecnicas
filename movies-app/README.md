@@ -16,9 +16,9 @@ Requerimientos:
 
 Primera iteración:
 
-✅ Evitar que se haga la misma búsqueda dos veces seguidas. -> useRef
+✅ Evitar que se haga la misma búsqueda dos veces seguidas. -> useRef, permite crear una referencia que no cambia entre renderizados
 
-✅ Ordenar búsqueda.  -> useMemo, array.sort y string.localeCompare
+✅ Ordenar búsqueda.  -> useMemo, array.sort y string.localeCompare " Al utilizar useMemo, se puede evitar recalcular la ordenación en cada renderizado, lo que puede ayudar a evitar cálculos innecesarios y mejorar la velocidad de renderizado de la aplicación."
 
 ✅ Haz que la búsqueda se haga automáticamente al escribir. useCallback
 
