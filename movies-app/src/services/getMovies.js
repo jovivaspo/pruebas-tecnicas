@@ -5,7 +5,7 @@ export const getMovies = async (search) => {
 	try{
 		const res = await fetch(API + search)
 
-		const json = await res.json()
+	const json = await res.json()
     
 		return json
 
