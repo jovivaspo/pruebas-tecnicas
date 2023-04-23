@@ -31,7 +31,7 @@ export const App = () => {
         <div className='row'>
             <div className='col col-title'>
                 {fact && gif && (
-                    <h3>Fact: {fact}</h3>
+                    <p>Fact: {fact}</p>
                 )}
             </div>
 
